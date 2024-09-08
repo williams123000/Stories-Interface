@@ -60,6 +60,7 @@ class Character:
         self.Dangers = DictionaryCharacter['Dangers']
         self.Success = DictionaryCharacter['Success']
         self.ObjectOfEmotion = DictionaryCharacter['ObjectOfEmotion']
+        self.Loyalty = DictionaryCharacter['Loyalty']
 
     # Método que imprime los atributos del personaje
     def printCharacter(self):
@@ -75,6 +76,7 @@ class Character:
         print(f"Dangers: {self.Dangers}")
         print(f"Success: {self.Success}")
         print(f"ObjectOfEmotion: {self.ObjectOfEmotion}")
+        print(f"Loyalty: {self.Loyalty}")
         print("\n")
         
 # Limpiar el contenido de un archivo
@@ -133,7 +135,8 @@ def getCharactersDetails():
                         f"CapacityStatus: {char.CapacityStatus}\n"
                         f"Dangers: {char.Dangers}\n"
                         f"Success: {char.Success}\n"
-                        f"ObjectOfEmotion: {char.ObjectOfEmotion}\n")
+                        f"ObjectOfEmotion: {char.ObjectOfEmotion}\n"
+                        f"Loyalty: {char.Loyalty}\n")
     return "\n".join(details)
 
     
@@ -477,7 +480,7 @@ def storyActionTheSeekerSuccessfullySecuresTheTreasure():
         global Seeker
         global Candidate
         global Crush
-        Text = f"The {Seeker.Name} and the {Candidate.Name} finally guard the treasure. And the {Crush.Name} after a long time decided to be a partner of the {Seeker.Name}, together they enjoyed the reward of the treasure." 
+        Text = f"The {Seeker.Name} and the {Candidate.Name} finally found the treasure, an ancient chest full of unimaginable riches. The {Seeker.Name} and The . {Candidate.Name} finally guarded the treasure. For his part, the {Seeker.Name} returned to the {Seeker.Location} , where the {Crush.Name} was waiting for him. The {Crush.Name} after a long time decided to become a partner of the {Seeker.Name}, together they enjoyed the reward of the treasure."
         saveFileHistory(Text)
         logging.info("Texto de la historia: " + Text)
 
@@ -485,13 +488,42 @@ def storyActionTheSeekerSuccessfullySecuresTheTreasure():
     postconditions()
     template()
 
-
-
+# Acción el ayudante lo traiciona y se queda con el tesoro
+def storyActionTheHelperBetrayedHimAndKeptTheTreasure():
+    def preconditions():
+        logging.info("La acción de el ayudante lo traiciona y se queda con el tesoro no tiene precondiciones")
+        pass
+    def postconditions():
+        global Seeker
+        logging.info("Postcondiciones para la acción de el ayudante lo traiciona y se queda con el tesoro")
+        Seeker.Success = "Yes"
+        logging.info("Éxito: " + Seeker.Success + " " + Seeker.Name)
+    def template():
+        global Seeker
+        global Candidate
+        global Crush
+        Text = f"The {Seeker.Name} and the {Candidate.Name} finally found the treasure, an ancient chest filled with unimaginable riches. As they took a moment to celebrate their accomplishment, the {Seeker.Name} relaxed, trusting his traveling companion. However, in an unexpected turn, the {Candidate.Name}, driven by greed, decided that he would not share the fortune with anyone. For his part, the {Seeker.Name} returned to the {Seeker.Location}, where the {Crush.Name} awaited him. Although he had not obtained the treasure, he had gained something far more valuable: the lesson that true wealth is not found in material objects, but in people and lessons learned along the way."
+        saveFileHistory(Text)
+        logging.info("Texto de la historia: " + Text)
+    preconditions()
+    postconditions()
+    template()
 
 # Meta Alcanzar la ubicación donde se cree que está escondido el tesoro
 def GoalReachTheLocationWhereTheTreasureIsBelievedToBeHidden():
     def preconditions():
+        global Seeker
+        global Candidate
+        Listloyalty = []
+        Listloyalty.append("Loyal")
+        Listloyalty.append("Traitor")
+
+        #Escoge un elemento aleatorio de la lista
+        Loyalty = random.choice(Listloyalty)
+        #Instarciar el personaje Buscador con el atributo lealtad
+        Seeker.Loyalty = Loyalty
         logging.info("Validando las precondiciones de la meta: Alcanzar la ubicación donde se cree que está escondido el tesoro")
+        logging.info("Lealtad del buscador: " + Seeker.Loyalty)
         logging.info("La meta Alcanzar la ubicación donde se cree que está escondido el tesoro se pone en pausa")
         logging.info("Meta: El buscador se percata que necesita preparas la expedición")
         GoalTheSeekerRealizesThatHeNeedsToPrepareTheExpedition()
@@ -499,7 +531,15 @@ def GoalReachTheLocationWhereTheTreasureIsBelievedToBeHidden():
     def plan():
         global StatusGoalReachTheLocationWhereTheTreasureIsBelievedToBeHidden
         logging.info("Planificación de la meta: Alcanzar la ubicación donde se cree que está escondido el tesoro")
-        storyActionTheSeekerSuccessfullySecuresTheTreasure()
+        #storyActionTheSeekerSuccessfullySecuresTheTreasure()
+
+        if Seeker.Loyalty == "Traitor":
+            logging.info("El ayudante lo traiciona y se queda con el tesoro")
+            storyActionTheHelperBetrayedHimAndKeptTheTreasure()
+        elif Seeker.Loyalty == "Loyal":
+            logging.info("El ayudante es leal y se queda con el tesoro")
+            storyActionTheSeekerSuccessfullySecuresTheTreasure()
+
         StatusGoalReachTheLocationWhereTheTreasureIsBelievedToBeHidden = True
         logging.info("Meta: Alcanzar la ubicación donde se cree que está escondido el tesoro completada")
 

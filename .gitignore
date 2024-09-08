@@ -6,3 +6,7 @@ __pycache__
 
 # Logs
 logs
+
+# .Exe constructor
+build
+dist

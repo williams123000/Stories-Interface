@@ -11,7 +11,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "Find the treasure"
+        "ObjectOfEmotion": "Find the treasure",
+        "Loyalty": "None"
     },
     {
         "Name": "Female Doctor",
@@ -25,7 +26,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "None"
+        "ObjectOfEmotion": "None",
+        "Loyalty": "None"
     },
     {
         "Name": "Historian",
@@ -39,7 +41,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "Find the treasure"
+        "ObjectOfEmotion": "Find the treasure",
+        "Loyalty": "None"
     },
     {
         "Name": "Hacker",
@@ -53,7 +56,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "Find the treasure"
+        "ObjectOfEmotion": "Find the treasure",
+        "Loyalty": "None"
     },
     {
         "Name": "Detective",
@@ -67,7 +71,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "Find the treasure"
+        "ObjectOfEmotion": "Find the treasure",
+        "Loyalty": "None"
     },
     {
         "Name": "Female Lawyer",
@@ -81,7 +86,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "None"
+        "ObjectOfEmotion": "None",
+        "Loyalty": "None"
     },
     {
         "Name": "Treasure",
@@ -95,7 +101,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "None"
+        "ObjectOfEmotion": "None",
+        "Loyalty": "None"
     },
     {
         "Name": "Soldier",
@@ -109,7 +116,8 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "None"
+        "ObjectOfEmotion": "None",
+        "Loyalty": "None"
     },
     {
         "Name": "Ninja",
@@ -123,6 +131,7 @@
         "CapacityStatus": "None",
         "Dangers": "None",
         "Success": "None",
-        "ObjectOfEmotion": "None"
+        "ObjectOfEmotion": "None",
+        "Loyalty": "None"
     }
 ]
