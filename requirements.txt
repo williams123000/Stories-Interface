@@ -1,0 +1,6 @@
+Pillow
+pyttsx3
+colorama
+python-dotenv
+requests
+deep-translator
