@@ -12,3 +12,5 @@ build
 dist
 
 History.txt
+story_generator_gui.spec
+StoryGenerator.spec
