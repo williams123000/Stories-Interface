@@ -121,8 +121,8 @@ class StoryGeneratorGUI:
         ttk.Label(options_frame, text="Elige el tema de tu odisea espacial:", font=subtitle_font, style="TLabel").pack(anchor="w", pady=(10,5))
         self.script_var = tk.StringVar(value="Un Secuestro")
         self.script_map = {
-            "Un Secuestro": "HistoryFinal.py",
-            "La Búsqueda del Tesoro": "History.py"
+            "Un Secuestro": "HistoryKidnapping.py",
+            "La Búsqueda del Tesoro": "HistoryTreasure.py"
         }
         script_combo = ttk.Combobox(options_frame, textvariable=self.script_var, values=list(self.script_map.keys()), state="readonly", style="TCombobox")
         script_combo.pack(fill='x', pady=0)
@@ -146,7 +146,7 @@ class StoryGeneratorGUI:
         self.story_text.insert(tk.END, "Preparando los motores de la narrativa cósmica...\n\n")
 
         selected_theme = self.script_var.get()
-        selected_script = self.script_map.get(selected_theme, "History.py")
+        selected_script = self.script_map.get(selected_theme, "HistoryTreasure.py")
 
         # Usar resource_path para obtener la ruta correcta del script
         script_path = self.resource_path(selected_script)
