@@ -20,13 +20,13 @@ Para ejecutar esta aplicación, asegúrate de tener instaladas las siguientes he
 ## 🚀 Instalación
 Sigue estos pasos para poner en marcha el Generador de Historias GUI en tu máquina local:
 ```bash
-git clone https://github.com/tu_usuario/generador_de_historias_gui.git
+git clone https://github.com/williams123000/Stories-Interface
 cd Stories-Interface
 pip install -r requirements.txt
 
 ```
 Instala LM Studio si deseas habilitar la funcionalidad de inteligencia artificial avanzada para la generación de historias.
-- Puedes descargar LM Studio desde (https://lmstudio.ai/).
+- Puedes descargar LM Studio desde [LM Studio](https://lmstudio.ai/).
 
 ## 🎮 Uso de la Aplicación
 
@@ -34,11 +34,11 @@ Ejecuta la aplicación con el siguiente comando:
 ```bash
 python story_generator_gui.py
 ```
-Configura tu aventura personalizada utilizando las opciones disponibles en la interfaz. ¡Tú decides la dirección que tomará la historia!
+- Configura tu aventura personalizada utilizando las opciones disponibles en la interfaz. ¡Tú decides la dirección que tomará la historia!
 
-Haz clic en "Genera tu historia" para obtener una narración única y fascinante creada solo para ti.
+- Haz clic en "Genera tu historia" para obtener una narración única y fascinante creada solo para ti.
 
-Cada vez que ejecutes un script de historia, se generará un log en la carpeta logs/ con detalles de la historia, la cual estará organizada por fecha y hora de ejecución.
+- Cada vez que ejecutes un script de historia, se generará un log en la carpeta logs/ con detalles de la historia, la cual estará organizada por fecha y hora de ejecución.
 
 ## 🗂️ Estructura del Proyecto
 
